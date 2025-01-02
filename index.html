@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar Application</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Communication Tracking Dashboard</h1>
+            <div class="notifications" id="notificationCount">3 Overdue</div>
+        </div>
+
+        <div class="dashboard">
+            <h2>Company Communications</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Company Name</th>
+                        <th>Last 5 Communications</th>
+                        <th>Next Scheduled Communication</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="companyTableBody">
+                    <tr>
+                        <td>Company A</td>
+                        <td>LinkedIn Post (Jan 1), Email (Dec 20)</td>
+                        <td>Email (Jan 10)</td>
+                        <td><span class="status-yellow">Due Today</span></td>
+                    </tr>
+                    <tr>
+                        <td>Company B</td>
+                        <td>Phone Call (Dec 15), Email (Dec 5)</td>
+                        <td>LinkedIn Message (Jan 15)</td>
+                        <td><span class="status-red">Overdue</span></td>
+                    </tr>
+                    <tr>
+                        <td>Company C</td>
+                        <td>Visit (Dec 10), LinkedIn Post (Nov 25)</td>
+                        <td>Visit (Jan 20)</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="calendar">
+            <h2>Calendar View</h2>
+            <div class="calendar-view" id="calendarView">
+                <!-- Calendar days will be dynamically populated -->
+            </div>
+        </div>
+
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal" id="modal">
+            <h2 id="modalDay">Log Communication</h2>
+            <label for="communicationType">Type:</label>
+            <select id="communicationType">
+                <option>LinkedIn Post</option>
+                <option>Email</option>
+                <option>Phone Call</option>
+                <option>Visit</option>
+            </select>
+            <br>
+            <label for="communicationDate">Date:</label>
+            <input type="date" id="communicationDate">
+            <br>
+            <label for="communicationNotes">Notes:</label>
+            <textarea id="communicationNotes" rows="4"></textarea>
+            <br>
+            <button id="submitCommunication">Submit</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
